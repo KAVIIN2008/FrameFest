@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrameFest | Short Film Contest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="#" class="brand"><span class="brand-icon">F</span> FrameFest</a>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#submit">Submit Film</a>
+      <a href="#leaderboard">Leaderboard</a>
+    </nav>
+    <span class="live-badge"><span></span> Contest Live</span>
+  </header>
+
+  <main class="container" id="dashboard">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">THE SHORT FILM CONTEST</span>
+        <h1>Your story.<br><span>Your screen.</span></h1>
+        <p>A platform for filmmakers to showcase their creativity, get judged, and rise to the top.</p>
+        <a class="primary-btn" href="#submit">Submit your film <span>→</span></a>
+      </div>
+      <div class="hero-art">
+        <div class="film-frame">
+          <div class="film-icon">▶</div>
+          <div class="film-caption">EVERY FRAME TELLS A STORY</div>
+        </div>
+        <div class="hero-sticker">CREATE<br>INSPIRE<br>REPEAT.</div>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <span class="stat-label">Total Films</span>
+        <strong id="totalFilms">—</strong>
+        <span class="stat-note">Submitted entries</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Total Judges</span>
+        <strong id="totalJudges">—</strong>
+        <span class="stat-note">Contest jury</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Scores Given</span>
+        <strong id="totalScores">—</strong>
+        <span class="stat-note">Evaluations completed</span>
+      </article>
+      <article class="stat-card highlight-card">
+        <span class="stat-label">Top Film</span>
+        <strong id="topFilm">—</strong>
+        <span class="stat-note" id="topScore">Waiting for results</span>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <section class="panel submit-panel" id="submit">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">JOIN THE CONTEST</span>
+            <h2>Submit your film</h2>
+          </div>
+          <span class="heading-icon">＋</span>
+        </div>
+        <form id="entryForm">
+          <label for="title">Film title</label>
+          <input id="title" name="title" placeholder="Enter your film title" maxlength="150" required>
+
+          <label for="directorName">Director name</label>
+          <input id="directorName" name="directorName" placeholder="Enter director's name" maxlength="100" required>
+
+          <label for="description">Film description</label>
+          <textarea id="description" name="description" placeholder="Tell us about your story..." maxlength="1000" rows="4"></textarea>
+
+          <label for="filmUrl">Film URL</label>
+          <input id="filmUrl" name="filmUrl" type="url" placeholder="https://example.com/your-film" maxlength="500">
+
+          <button class="primary-btn full-btn" type="submit">Submit entry <span>→</span></button>
+          <p id="formMessage" class="message" role="status"></p>
+        </form>
+      </section>
+
+      <section class="panel films-panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">THE COLLECTION</span>
+            <h2>Recent submissions</h2>
+          </div>
+          <button class="text-btn" id="refreshBtn">Refresh ↻</button>
+        </div>
+        <div id="filmList" class="film-list">
+          <p class="empty-state">Loading submissions...</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="panel leaderboard-panel" id="leaderboard">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">THE RACE TO THE TOP</span>
+          <h2>Leaderboard</h2>
+          <p class="section-subtitle">Rankings based on judges' scores.</p>
+        </div>
+        <button class="text-btn" id="refreshLeaderboard">Refresh ↻</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Film</th>
+              <th>Director</th>
+              <th>Total score</th>
+              <th>Average</th>
+              <th>Judges</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBody">
+            <tr><td colspan="6" class="empty-state">Loading leaderboard...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <a href="#" class="brand"><span class="brand-icon">F</span> FrameFest</a>
+      <p>Celebrating stories, one frame at a time.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
